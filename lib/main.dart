@@ -55,16 +55,26 @@ class _GeneratingWordsState extends State<GeneratingWords> {
           ),
         ),
         actions: [
-          MenuItemButton(
+          IconButton(
             onPressed: () => showToastMessage(
               'Not Available!',
             ), // End Of showToastMessage()
-            child: const Icon(
+            icon: const Icon(
               Icons.menu,
               color: Colors.white,
               semanticLabel: 'Menu Icon, Access To Main Setting Of App',
             ),
           ),
+          IconButton(
+            onPressed: () => showToastMessage(
+              'Not Available!',
+            ), // End Of showToastMessage()
+            icon: const Icon(
+              Icons.bookmark_add_outlined,
+              color: Colors.white,
+              semanticLabel: 'BookMark Icon To Save Interest Words',
+            ),
+          )
         ], // End Of Actions
       ),
     );
