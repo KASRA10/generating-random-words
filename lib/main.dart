@@ -31,6 +31,8 @@ class _GeneratingWordsState extends State<GeneratingWords> {
         toastLength: Toast.LENGTH_LONG,
       );
 
+  int wordCounter = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -77,28 +79,94 @@ class _GeneratingWordsState extends State<GeneratingWords> {
           )
         ], // End Of Actions
       ),
-      body: Column(
-        children: [
-          Image.asset(
-            'lib/images/a.png',
-            width: 120,
-            height: 120,
-            semanticLabel: 'Performs A alphabet',
-          ),
-          const Text(
-            '"A Word"',
-            style: TextStyle(
-              fontFamily: 'Jua',
-              fontSize: 30,
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(
+              'lib/images/a.png',
+              width: 220,
+              height: 220,
+              semanticLabel: 'Performs A alphabet',
             ),
-          ),
-          ElevatedButton.icon(
-            onPressed: () {},
-            label: const Text('Generate'),
-            icon: const Icon(Icons.graphic_eq_outlined),
-            iconAlignment: IconAlignment.end,
-          ),
-        ], // Column Children
+            const Padding(
+              padding: EdgeInsets.symmetric(
+                vertical: 50.0,
+              ),
+              child: Text(
+                '"A Word"',
+                style: TextStyle(
+                  fontFamily: 'Jua',
+                  fontSize: 35,
+                ),
+              ),
+            ),
+            ElevatedButton.icon(
+              onPressed: () {},
+              label: const Text(
+                'Generate Word',
+                style: TextStyle(
+                  fontFamily: 'Jua',
+                  fontSize: 20,
+                  color: Colors.white,
+                ),
+              ),
+              icon: const Icon(
+                Icons.restart_alt_outlined,
+                color: Colors.white,
+                semanticLabel:
+                    'restore and regenerate the words icon with two arrows',
+              ),
+              iconAlignment: IconAlignment.end,
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.pink,
+                shadowColor: Colors.pink,
+                elevation: 15,
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 35.0,
+                  vertical: 15.0,
+                ),
+              ), // ElevationButton StyleFrom
+            ),
+            const Padding(
+              padding: EdgeInsets.symmetric(
+                vertical: 25.0,
+              ),
+              child: Divider(
+                color: Colors.pink,
+                thickness: 1.0,
+                indent: 100.0,
+                endIndent: 100.0,
+              ),
+            ),
+            const SizedBox(
+              width: 250.0,
+              child: Text(
+                'The Image will Indicate The First Character/ Alphabet Of The Word!',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontFamily: 'Jua',
+                  fontSize: 14,
+                  color: Colors.black,
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                vertical: 25.0,
+              ),
+              child: Text(
+                'Number Of Generated Words To Day: $wordCounter',
+                textAlign: TextAlign.center,
+                style: const TextStyle(
+                  fontFamily: 'Jua',
+                  fontSize: 18,
+                  color: Colors.black,
+                ),
+              ),
+            ),
+          ], // Column Children
+        ),
       ),
     );
   }
