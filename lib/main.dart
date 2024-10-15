@@ -1,5 +1,7 @@
 import 'dart:io';
+import 'dart:math';
 
+import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
@@ -31,7 +33,19 @@ class _GeneratingWordsState extends State<GeneratingWords> {
         toastLength: Toast.LENGTH_LONG,
       );
 
+  String generatingWord = 'A Word';
+  String imageFirstCharacter = 'a';
   int wordCounter = 0;
+  int wordListRandomNumber = 0;
+
+  void generateWords() {
+    setState(() {
+      wordListRandomNumber = Random().nextInt(4394);
+      generatingWord = all.elementAt(wordListRandomNumber);
+      imageFirstCharacter = generatingWord[0];
+      wordCounter++;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -89,20 +103,20 @@ class _GeneratingWordsState extends State<GeneratingWords> {
               height: 220,
               semanticLabel: 'Performs A alphabet',
             ),
-            const Padding(
-              padding: EdgeInsets.symmetric(
+            Padding(
+              padding: const EdgeInsets.symmetric(
                 vertical: 50.0,
               ),
               child: Text(
-                '"A Word"',
-                style: TextStyle(
+                '"$generatingWord"',
+                style: const TextStyle(
                   fontFamily: 'Jua',
                   fontSize: 35,
                 ),
               ),
             ),
             ElevatedButton.icon(
-              onPressed: () {},
+              onPressed: () => generateWords(),
               label: const Text(
                 'Generate Word',
                 style: TextStyle(
