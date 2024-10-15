@@ -77,6 +77,16 @@ class _GeneratingWordsState extends State<GeneratingWords> {
           )
         ], // End Of Actions
       ),
+      body: Column(
+        children: [
+          Image.asset(
+            'lib/images/a.png',
+            width: 90,
+            height: 90,
+            semanticLabel: 'Performs A alphabet',
+          ),
+        ], // Column Children
+      ),
     );
   }
 }
