@@ -33,14 +33,16 @@ class _GeneratingWordsState extends State<GeneratingWords> {
         toastLength: Toast.LENGTH_LONG,
       );
 
-  String generatingWord = 'A Word';
-  String imageFirstCharacter = 'a';
-  int wordCounter = 0;
-  int wordListRandomNumber = 0;
+  String generatingWord = 'A Word'; // A String Word To Display
+  String imageFirstCharacter =
+      'a'; // Get First Character Of a Words To Show The Related Image
+  int wordCounter = 0; // To Count Number Of Words
+  int wordListRandomNumber =
+      0; // To Use It In The english_words Package Items of List Of Words
 
   void generateWords() {
     setState(() {
-      wordListRandomNumber = Random().nextInt(4394);
+      wordListRandomNumber = Random().nextInt(all.length);
       generatingWord = all.elementAt(wordListRandomNumber).toLowerCase();
       imageFirstCharacter = generatingWord[0];
       wordCounter++;
@@ -98,7 +100,7 @@ class _GeneratingWordsState extends State<GeneratingWords> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(
-              'lib/images/a.png',
+              'lib/images/$imageFirstCharacter.png',
               width: 220,
               height: 220,
               semanticLabel: 'Performs A alphabet',
