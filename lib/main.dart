@@ -41,7 +41,7 @@ class _GeneratingWordsState extends State<GeneratingWords> {
   void generateWords() {
     setState(() {
       wordListRandomNumber = Random().nextInt(4394);
-      generatingWord = all.elementAt(wordListRandomNumber);
+      generatingWord = all.elementAt(wordListRandomNumber).toLowerCase();
       imageFirstCharacter = generatingWord[0];
       wordCounter++;
     });
