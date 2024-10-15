@@ -81,9 +81,22 @@ class _GeneratingWordsState extends State<GeneratingWords> {
         children: [
           Image.asset(
             'lib/images/a.png',
-            width: 90,
-            height: 90,
+            width: 120,
+            height: 120,
             semanticLabel: 'Performs A alphabet',
+          ),
+          const Text(
+            '"A Word"',
+            style: TextStyle(
+              fontFamily: 'Jua',
+              fontSize: 30,
+            ),
+          ),
+          ElevatedButton.icon(
+            onPressed: () {},
+            label: const Text('Generate'),
+            icon: const Icon(Icons.graphic_eq_outlined),
+            iconAlignment: IconAlignment.end,
           ),
         ], // Column Children
       ),
