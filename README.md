@@ -3,7 +3,7 @@
 
 # About 📲
 
-A Funny And Simple Generating Words Flutter Aplpication. I used a English Word Package And Random Numbers.
+A Funny And Simple Generating Words Flutter Application. I used a English Word Package And Random Numbers.
 
 # What Is Dart? [![My Skills](https://skillicons.dev/icons?i=dart)](https://skillicons.dev)
 
